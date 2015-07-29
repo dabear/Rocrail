@@ -2017,8 +2017,9 @@ RocGuiFrame::RocGuiFrame(const wxString& title, const wxPoint& pos, const wxSize
   m_bPendingOpenWorkspace = false;
 
 
-  m_bExpired = SystemOp.isExpired(SystemOp.decode(StrOp.strToByte(wxGetApp().m_donkey),
-      StrOp.len(wxGetApp().m_donkey)/2, wxGetApp().m_doneml), NULL, NULL, wGlobal.vmajor, wGlobal.vminor);
+  //m_bExpired = SystemOp.isExpired(SystemOp.decode(StrOp.strToByte(wxGetApp().m_donkey),
+  //    StrOp.len(wxGetApp().m_donkey)/2, wxGetApp().m_doneml), NULL, NULL, wGlobal.vmajor, wGlobal.vminor);
+  m_bExpired = False; 
 
   if( wxTheClipboard != NULL ) {
     if( wxTheClipboard->Open() ) {
@@ -4459,8 +4460,9 @@ void RocGuiFrame::OnDonKey( wxCommandEvent& event ) {
     DonKey* dlg = new DonKey(this, m_Ini );
     TraceOp.trc( "frame", TRCLEVEL_INFO, __LINE__, 9999, "key is expired");
     if( wxID_OK == dlg->ShowModal() ) {
-      m_bExpired = SystemOp.isExpired(SystemOp.decode(StrOp.strToByte(wxGetApp().m_donkey),
-          StrOp.len(wxGetApp().m_donkey)/2, wxGetApp().m_doneml), NULL, NULL, wGlobal.vmajor, wGlobal.vminor);
+      //m_bExpired = SystemOp.isExpired(SystemOp.decode(StrOp.strToByte(wxGetApp().m_donkey),
+      //    StrOp.len(wxGetApp().m_donkey)/2, wxGetApp().m_doneml), NULL, NULL, wGlobal.vmajor, wGlobal.vminor);
+      m_bExpired = False;
     }
     dlg->Destroy();
   }
