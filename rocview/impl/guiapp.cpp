@@ -951,9 +951,9 @@ bool RocGui::OnInit() {
   m_Frame->Raise();
 
   /* Donation dialog at startup */
-  iOThread dkth = ThreadOp.inst( "donkeythread", &donkeyThread, this );
+  /*iOThread dkth = ThreadOp.inst( "donkeythread", &donkeyThread, this );
   ThreadOp.start( dkth );
-
+  */
 
   if( !m_bOffline ) {
     iOThread th = ThreadOp.inst( "conthread", &conThread, this );
